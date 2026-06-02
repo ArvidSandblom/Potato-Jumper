@@ -4,28 +4,22 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
     [Header("Animation")]
-    [SerializeField] Sprite[] JumpWindupAnimRight;
-    [SerializeField] Sprite[] JumpWindupAnimLeft;
-    [SerializeField] Sprite[] AirAnimRight;
-    [SerializeField] Sprite[] AirAnimLeft;
-    [SerializeField] Sprite[] LandAnimRight;
-    [SerializeField] Sprite[] LandAnimLeft;
+    [SerializeField] Sprite[] JumpWindupAnim;
+    [SerializeField] Sprite[] AirAnim;
+    [SerializeField] Sprite[] LandAnim;
     [SerializeField] Sprite[] IdleAnim;
     public Sprite[] currentAnimation;
     SpriteRenderer spriteRenderer;
     int frameIndex = 0;
     public float animationSpeed;
-    float animationTimer = 0f;
     Coroutine currentAnimationCoroutine;
     bool isWindingUp = false;
     bool isInAir = false;
     bool isFacingRight = true;
-    Color defaultColor = Color.white;
-    [SerializeField] Color windupColor = Color.red;
     [Header("Jump Charge")]
     [SerializeField] float jumpPower = 0f;
     [SerializeField] float maxJumpPower = 5f;
-    [SerializeField] float chargeRate = 1f;
+    [SerializeField] float chargeRate = 1.5f;
     Rigidbody2D rb;
 
 
@@ -33,8 +27,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-            defaultColor = spriteRenderer.color;
     }
 
     void Update()
@@ -44,24 +36,24 @@ public class Player : MonoBehaviour
             jumpPower += chargeRate * Time.deltaTime;
             jumpPower = Mathf.Min(jumpPower, maxJumpPower);
             
-            // Start windup animation if not already playing
+            // ändra riktning på sprite så att potatisen alltid "tittar" mot musen
+            Camera cam = Camera.main;
+            if (cam != null)
+            {
+                Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorld.z = transform.position.z;
+                isFacingRight = mouseWorld.x >= transform.position.x;
+                UpdateSpriteDirection();
+            }
+            
+            // check om vi inte redan är i windup, så att vi inte startar om animationen varje frame
             if (!isWindingUp)
             {
                 isWindingUp = true;
-                // choose left/right windup based on mouse position
-                Camera cam = Camera.main;
-                if (cam != null)
-                {
-                    Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
-                    mouseWorld.z = transform.position.z;
-                    isFacingRight = mouseWorld.x >= transform.position.x;
-                }
-
-                Sprite[] chosenWindup = isFacingRight ? JumpWindupAnimRight : JumpWindupAnimLeft;
-                ChangeAnimation(chosenWindup);
+                ChangeAnimation(JumpWindupAnim);
                 if (currentAnimationCoroutine != null)
                     StopCoroutine(currentAnimationCoroutine);
-                currentAnimationCoroutine = StartCoroutine(WindupRoutine(chosenWindup));
+                currentAnimationCoroutine = StartCoroutine(WindupRoutine(JumpWindupAnim));
             }
         }
 
@@ -70,9 +62,6 @@ public class Player : MonoBehaviour
             isWindingUp = false;
             if (currentAnimationCoroutine != null)
                 StopCoroutine(currentAnimationCoroutine);
-            // reset color when leaving windup
-            if (spriteRenderer != null)
-                spriteRenderer.color = defaultColor;
             JumpTowardMouse();
         }
     }
@@ -93,17 +82,17 @@ public class Player : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(jumpDirection * jumpPower, ForceMode2D.Impulse);
 
-        // start in-air state and animation
+        // state och animation i luften
         jumpPower = 0f;
         isInAir = true;
-        // choose appropriate air animation based on direction
         isFacingRight = jumpDirection.x >= 0f;
-        Sprite[] airAnim = isFacingRight ? AirAnimRight : AirAnimLeft;
-        ChangeAnimation(airAnim);
+        UpdateSpriteDirection();
+        ChangeAnimation(AirAnim);
         if (currentAnimationCoroutine != null)
             StopCoroutine(currentAnimationCoroutine);
-        currentAnimationCoroutine = StartCoroutine(PlayLoopingAnimation(airAnim));
+        currentAnimationCoroutine = StartCoroutine(PlayLoopingAnimation(AirAnim));
     }
+    
     public void ChangeAnimation(Sprite[] animationToChangeTo)
     {
         if(currentAnimation != animationToChangeTo)
@@ -111,50 +100,50 @@ public class Player : MonoBehaviour
             currentAnimation = animationToChangeTo;
             animationSpeed = currentAnimation.Length;
             frameIndex = 0;
-            animationTimer = 0f;
+        }
+    }
+
+    void UpdateSpriteDirection()
+    {
+        if (spriteRenderer != null)
+        {
+            // vänd sprite baserat på isFacingRight så att potatisen alltid "tittar" mot musen
+            spriteRenderer.flipX = !isFacingRight;
         }
     }
     IEnumerator WindupRoutine(Sprite[] animFrames)
     {
         while (isWindingUp && animFrames == currentAnimation)
         {
-            // Calculate animation progress based on jump power progress
+            // updaterar frame index baserat på hur mycket jumpPower har laddats, så att det ser ut som att potatisen laddar upp ju mer jumpPower den har
+            // sista frame i animFrames är full charge, första är ingen charge, och däremellan är det proportionellt
             float chargeProgress = Mathf.Clamp01(jumpPower / maxJumpPower);
-            
-            // Map charge progress to animation frame index
             frameIndex = Mathf.Clamp(Mathf.FloorToInt(chargeProgress * (animFrames.Length - 1)), 0, animFrames.Length - 1);
-            
-            // Update sprite and tint
+
             if (spriteRenderer != null && frameIndex < animFrames.Length)
             {
                 spriteRenderer.sprite = animFrames[frameIndex];
-                spriteRenderer.color = windupColor;
             }
 
-            // If we've reached the last frame but still winding up, loop animation frames
-            if (frameIndex >= animFrames.Length - 1 && isWindingUp)
-            {
-                frameIndex = 0;
-            }
-
-            yield return new WaitForSeconds(1f / Mathf.Max(1f, animationSpeed));
+            // väntar bara en frame så att animationen inte går snabbare än den borde även om animationSpeed är hög
+            yield return null;
         }
-
-        // Restore color when windup ends
-        if (spriteRenderer != null)
-            spriteRenderer.color = defaultColor;
     }
 
     IEnumerator PlayLoopingAnimation(Sprite[] animFrames)
     {
-        int idx = 0;
         while (isInAir && animFrames == currentAnimation)
         {
-            if (spriteRenderer != null)
-                spriteRenderer.sprite = animFrames[idx];
+            // Benen är i "sväv" när potat rör sig uppåt, och i "fall" när den rör sig nedåt
+            int spriteIdx = rb.linearVelocity.y > 0f ? 0 : 1;
+            
+            // Olikt från windup, här vill vi inte att frame index ska gå utanför arrayen även om animationSpeed är hög, så vi klämmer det istället
+            spriteIdx = Mathf.Min(spriteIdx, animFrames.Length - 1);
+            
+            if (spriteRenderer != null && spriteIdx < animFrames.Length)
+                spriteRenderer.sprite = animFrames[spriteIdx];
 
-            idx = (idx + 1) % animFrames.Length;
-            yield return new WaitForSeconds(1f / Mathf.Max(1f, animationSpeed));
+            yield return null;
         }
         currentAnimationCoroutine = null;
     }
@@ -168,10 +157,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(1f / Mathf.Max(1f, animationSpeed));
         }
 
-        // after landing animation, go to idle
-        ChangeAnimation(IdleAnim);
-        if (spriteRenderer != null)
-            spriteRenderer.color = defaultColor;
+        // vid landning vill vi inte gå tillbaka till idle direkt
         currentAnimationCoroutine = null;
     }
 
@@ -183,7 +169,7 @@ public class Player : MonoBehaviour
             if (currentAnimationCoroutine != null)
                 StopCoroutine(currentAnimationCoroutine);
 
-            Sprite[] landAnim = isFacingRight ? LandAnimRight : LandAnimLeft;
+            Sprite[] landAnim = LandAnim;
             ChangeAnimation(landAnim);
             currentAnimationCoroutine = StartCoroutine(PlayOnceAnimation(landAnim));
         }

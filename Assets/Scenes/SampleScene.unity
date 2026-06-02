@@ -718,7 +718,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -5589588276376750989, guid: aad49b070e6e1a644843598f31396613, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -756,13 +756,17 @@ MonoBehaviour:
   - {fileID: 4911770387236520244, guid: b21c83be2b187a347a9452a7f2762a23, type: 3}
   - {fileID: 4287647167650190745, guid: b21c83be2b187a347a9452a7f2762a23, type: 3}
   AirAnimRight:
-  - {fileID: 5445620477874799747, guid: eeb5aa3208bc45d4bb001c6d29e30cd9, type: 3}
+  - {fileID: 6156217097332143952, guid: 396f47dc75cac274288467494ce8b80e, type: 3}
   AirAnimLeft:
-  - {fileID: -6299939185833422911, guid: 535b3db68efebd74abf4fa0bd0098c4b, type: 3}
+  - {fileID: -7281847591693390484, guid: b92fdbc9dc1725d449bd5a9c52e3ec83, type: 3}
   LandAnimRight:
-  - {fileID: -5589588276376750989, guid: aad49b070e6e1a644843598f31396613, type: 3}
+  - {fileID: -7377259944920359611, guid: d89ac71d41994784b87b1136671189d6, type: 3}
+  - {fileID: -6316480948972588263, guid: d89ac71d41994784b87b1136671189d6, type: 3}
+  - {fileID: -8461901484982509834, guid: d89ac71d41994784b87b1136671189d6, type: 3}
   LandAnimLeft:
-  - {fileID: -5589588276376750989, guid: aad49b070e6e1a644843598f31396613, type: 3}
+  - {fileID: 376646516821120521, guid: 4de72a955d015c3498e3aa829a89b477, type: 3}
+  - {fileID: 3964550187105679719, guid: 4de72a955d015c3498e3aa829a89b477, type: 3}
+  - {fileID: 7072398082859708351, guid: 4de72a955d015c3498e3aa829a89b477, type: 3}
   IdleAnim:
   - {fileID: -5589588276376750989, guid: aad49b070e6e1a644843598f31396613, type: 3}
   - {fileID: 1037462102957433760, guid: aad49b070e6e1a644843598f31396613, type: 3}
