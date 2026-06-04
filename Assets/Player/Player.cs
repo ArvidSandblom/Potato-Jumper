@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
     void Start()
@@ -48,6 +49,22 @@ public class Player : MonoBehaviour
                 introSpriteRenderer.gameObject.SetActive(false);
                 StartCoroutine(IntroRoutine());
             }
+        }
+
+        // Check after first physics update if player is falling
+        StartCoroutine(CheckIfFalling());
+    }
+
+    IEnumerator CheckIfFalling()
+    {
+        yield return new WaitForFixedUpdate();
+        if (rb.linearVelocity.y < -0.1f)
+        {
+            isInAir = true;
+            ChangeAnimation(AirAnim);
+            if (currentAnimationCoroutine != null)
+                StopCoroutine(currentAnimationCoroutine);
+            currentAnimationCoroutine = StartCoroutine(PlayLoopingAnimation(AirAnim));
         }
     }
 
