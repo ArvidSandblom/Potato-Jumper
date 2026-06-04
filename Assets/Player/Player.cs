@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 public class Player : MonoBehaviour
 {
+    [SerializeField] Image[] endTexts;
     [Header("Animation")]
     [SerializeField] Sprite[] JumpWindupAnim;
     [SerializeField] Sprite[] AirAnim;
@@ -172,6 +173,12 @@ public class Player : MonoBehaviour
             Sprite[] landAnim = LandAnim;
             ChangeAnimation(landAnim);
             currentAnimationCoroutine = StartCoroutine(PlayOnceAnimation(landAnim));
+        }
+
+        if(collision.gameObject.tag == "Finish")
+        {
+            // Handle finish collision
+
         }
     }
 }
