@@ -23,9 +23,10 @@ public class Player : MonoBehaviour
     bool isInAir = false;
     bool isFacingRight = true;
     [Header("Jump Charge")]
-    [SerializeField] float jumpPower = 0f;
-    [SerializeField] float maxJumpPower = 5f;
-    [SerializeField] float chargeRate = 1.5f;
+    [SerializeField] float minJumpPower = 1f;
+    [SerializeField] float maxJumpPower = 10f;
+    [SerializeField] float chargeRate = 3f;
+    float jumpPower = 0f;
     Rigidbody2D rb;
 
 
@@ -33,7 +34,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
     }
 
     void Start()
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
     IEnumerator CheckIfFalling()
     {
         yield return new WaitForFixedUpdate();
-        if (rb.linearVelocity.y < -0.1f)
+        if (!IsGrounded() && rb.linearVelocity.y <= 0f)
         {
             isInAir = true;
             ChangeAnimation(AirAnim);
@@ -77,6 +77,9 @@ public class Player : MonoBehaviour
             // don't allow charging / starting a jump while already in air
             if (isInAir)
                 return;
+
+            if (jumpPower <= 0f)
+                jumpPower = minJumpPower;
 
             jumpPower += chargeRate * Time.deltaTime;
             jumpPower = Mathf.Min(jumpPower, maxJumpPower);
@@ -246,15 +249,9 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isInAir)
+        if (isInAir && IsLandingCollision(collision))
         {
-            isInAir = false;
-            if (currentAnimationCoroutine != null)
-                StopCoroutine(currentAnimationCoroutine);
-
-            Sprite[] landAnim = LandAnim;
-            ChangeAnimation(landAnim);
-            currentAnimationCoroutine = StartCoroutine(PlayOnceAnimation(landAnim));
+            Land();
         }
 
         if (collision.gameObject.name == "Finish")
@@ -280,5 +277,40 @@ public class Player : MonoBehaviour
                     spriteRenderer.sprite = IdleAnim[0];
             }
         }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (isInAir && IsLandingCollision(collision))
+        {
+            Land();
+        }
+    }
+
+    bool IsLandingCollision(Collision2D collision)
+    {
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            if (contact.normal.y > 0.5f)
+                return true;
+        }
+        return false;
+    }
+
+    void Land()
+    {
+        isInAir = false;
+        if (currentAnimationCoroutine != null)
+            StopCoroutine(currentAnimationCoroutine);
+
+        Sprite[] landAnim = LandAnim;
+        ChangeAnimation(landAnim);
+        currentAnimationCoroutine = StartCoroutine(PlayOnceAnimation(landAnim));
+    }
+
+    bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
+        return hit.collider != null;
     }
 }
