@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: 0d0a6537586daca48b3b592e30e851bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3278030695092564774
+    second: potato jumper lore_0
+  - first:
+      213: -3791414783014798977
+    second: potato jumper lore_1
+  - first:
+      213: 5240762537467426569
+    second: potato jumper lore_2
+  - first:
+      213: -1059134118742578521
+    second: potato jumper lore_3
+  - first:
+      213: -2034760459133505625
+    second: potato jumper lore_4
+  - first:
+      213: 8411092923568753271
+    second: potato jumper lore_5
+  - first:
+      213: 7018412048425737458
+    second: potato jumper lore_6
+  - first:
+      213: 7488644884610552974
+    second: potato jumper lore_7
+  - first:
+      213: -6078636975982886504
+    second: potato jumper lore_8
+  - first:
+      213: -2896411755825299112
+    second: potato jumper lore_9
+  - first:
+      213: 7299516744062412775
+    second: potato jumper lore_10
+  - first:
+      213: -5128424588159662953
+    second: potato jumper lore_11
+  - first:
+      213: 3818915611273851520
+    second: potato jumper lore_12
+  - first:
+      213: 6063744791892475475
+    second: potato jumper lore_13
+  - first:
+      213: 519197857030391019
+    second: potato jumper lore_14
+  - first:
+      213: -1566491843401699035
+    second: potato jumper lore_15
+  - first:
+      213: -1219489085294379029
+    second: potato jumper lore_16
+  - first:
+      213: 7049987924073201871
+    second: potato jumper lore_17
+  - first:
+      213: -6047570775937310644
+    second: potato jumper lore_18
+  - first:
+      213: 8449821992372274400
+    second: potato jumper lore_19
+  - first:
+      213: -7199837371868887782
+    second: potato jumper lore_20
+  - first:
+      213: 4403215472286786552
+    second: potato jumper lore_21
+  - first:
+      213: -6636909167037321854
+    second: potato jumper lore_22
+  - first:
+      213: -6884996684177058602
+    second: potato jumper lore_23
+  - first:
+      213: 735522646566634416
+    second: potato jumper lore_24
+  - first:
+      213: 2402631128491705097
+    second: potato jumper lore_25
+  - first:
+      213: 632070116375210286
+    second: potato jumper lore_26
+  - first:
+      213: 7889663077172268102
+    second: potato jumper lore_27
+  - first:
+      213: -5945938476971063253
+    second: potato jumper lore_28
+  - first:
+      213: 6831332456948655823
+    second: potato jumper lore_29
+  - first:
+      213: 4741692326740696970
+    second: potato jumper lore_30
+  - first:
+      213: -4508998580547072711
+    second: potato jumper lore_31
+  - first:
+      213: -8051597386580136413
+    second: potato jumper lore_32
+  - first:
+      213: -5317665365770731696
+    second: potato jumper lore_33
+  - first:
+      213: -5864053236512862233
+    second: potato jumper lore_34
+  - first:
+      213: 4600144163671193163
+    second: potato jumper lore_35
+  - first:
+      213: 3106867955594645895
+    second: potato jumper lore_36
+  - first:
+      213: 4188735647402977205
+    second: potato jumper lore_37
+  - first:
+      213: 3264519469505422090
+    second: potato jumper lore_38
+  - first:
+      213: 698146638230899722
+    second: potato jumper lore_39
+  - first:
+      213: 967560968577914208
+    second: potato jumper lore_40
+  - first:
+      213: 7321549213456694092
+    second: potato jumper lore_41
+  - first:
+      213: -7513784149271845131
+    second: potato jumper lore_42
+  - first:
+      213: 4281602015006404509
+    second: potato jumper lore_43
+  - first:
+      213: 4501379036316125029
+    second: potato jumper lore_44
+  - first:
+      213: 5970830388123649868
+    second: potato jumper lore_45
+  - first:
+      213: -3866233360949834389
+    second: potato jumper lore_46
+  - first:
+      213: -6666695247000328259
+    second: potato jumper lore_47
+  - first:
+      213: 1875674623024430913
+    second: potato jumper lore_48
+  - first:
+      213: 397555074909722267
+    second: potato jumper lore_49
+  - first:
+      213: -3234654759045279555
+    second: potato jumper lore_50
+  - first:
+      213: 4647705340291559424
+    second: potato jumper lore_51
+  - first:
+      213: -3294628376731677177
+    second: potato jumper lore_52
+  - first:
+      213: 9141112588300425348
+    second: potato jumper lore_53
+  - first:
+      213: -1517789012888400577
+    second: potato jumper lore_54
+  - first:
+      213: -882807604907844873
+    second: potato jumper lore_55
+  - first:
+      213: 4899068943299336297
+    second: potato jumper lore_56
+  - first:
+      213: -8256236922290510517
+    second: potato jumper lore_57
+  - first:
+      213: 8217360781438199966
+    second: potato jumper lore_58
+  - first:
+      213: 2180471521561407662
+    second: potato jumper lore_59
+  - first:
+      213: -1725138404074557387
+    second: potato jumper lore_60
+  - first:
+      213: -3934239839220543857
+    second: potato jumper lore_61
+  - first:
+      213: 4713665061353102343
+    second: potato jumper lore_62
+  - first:
+      213: 7679830202248484585
+    second: potato jumper lore_63
+  - first:
+      213: 5766696587218066981
+    second: potato jumper lore_64
+  - first:
+      213: -9167328320983834208
+    second: potato jumper lore_65
+  - first:
+      213: 709928537439147912
+    second: potato jumper lore_66
+  - first:
+      213: 5984600572157582957
+    second: potato jumper lore_67
+  - first:
+      213: 6318334839950729326
+    second: potato jumper lore_68
+  - first:
+      213: -1749366882852101328
+    second: potato jumper lore_69
+  - first:
+      213: 6453897629258614326
+    second: potato jumper lore_70
+  - first:
+      213: 2841252119884323536
+    second: potato jumper lore_71
+  - first:
+      213: 4369805766280776351
+    second: potato jumper lore_72
+  - first:
+      213: 4372811078262770437
+    second: potato jumper lore_73
+  - first:
+      213: -1576304454340778205
+    second: potato jumper lore_74
+  - first:
+      213: -4799652947094123456
+    second: potato jumper lore_75
+  - first:
+      213: 2155626864096173561
+    second: potato jumper lore_76
+  - first:
+      213: -4718033324676936947
+    second: potato jumper lore_77
+  - first:
+      213: -8884186429641326119
+    second: potato jumper lore_78
+  - first:
+      213: -5377826952918328483
+    second: potato jumper lore_79
+  - first:
+      213: 7971456434787257793
+    second: potato jumper lore_80
+  - first:
+      213: 1910983998197259973
+    second: potato jumper lore_81
+  - first:
+      213: 7022805573540375341
+    second: potato jumper lore_82
+  - first:
+      213: -5045157295510775412
+    second: potato jumper lore_83
+  - first:
+      213: -3213741607048525470
+    second: potato jumper lore_84
+  - first:
+      213: 956473198537076456
+    second: potato jumper lore_85
+  - first:
+      213: 7139417815828578186
+    second: potato jumper lore_86
+  - first:
+      213: -450747873122264898
+    second: potato jumper lore_87
+  - first:
+      213: -2768205592396801462
+    second: potato jumper lore_88
+  - first:
+      213: 7805540019855585418
+    second: potato jumper lore_89
+  - first:
+      213: 9035550455507179932
+    second: potato jumper lore_90
+  - first:
+      213: -6775702763460775552
+    second: potato jumper lore_91
+  - first:
+      213: 7085941312123058345
+    second: potato jumper lore_92
+  - first:
+      213: -3539310447834382567
+    second: potato jumper lore_93
+  - first:
+      213: -8284868473109155964
+    second: potato jumper lore_94
+  - first:
+      213: 4716250615843424948
+    second: potato jumper lore_95
+  - first:
+      213: 3862301854069191200
+    second: potato jumper lore_96
+  - first:
+      213: 5373705823078836362
+    second: potato jumper lore_97
+  - first:
+      213: 1947422413575797013
+    second: potato jumper lore_98
+  - first:
+      213: -4498484179740787542
+    second: potato jumper lore_99
+  - first:
+      213: 7170903009225965914
+    second: potato jumper lore_100
+  - first:
+      213: 4309736022099439240
+    second: potato jumper lore_101
+  - first:
+      213: 6187881286846959103
+    second: potato jumper lore_102
+  - first:
+      213: -4931262140939766190
+    second: potato jumper lore_103
+  - first:
+      213: 620503489027431597
+    second: potato jumper lore_104
+  - first:
+      213: -6652569161413810890
+    second: potato jumper lore_105
+  - first:
+      213: 4477326608076583563
+    second: potato jumper lore_106
+  - first:
+      213: 8555307811878937685
+    second: potato jumper lore_107
+  - first:
+      213: -2385927873944228185
+    second: potato jumper lore_108
+  - first:
+      213: -3951753124551472105
+    second: potato jumper lore_109
+  - first:
+      213: -1559409665197690745
+    second: potato jumper lore_110
+  - first:
+      213: -2106449845194032929
+    second: potato jumper lore_111
+  - first:
+      213: 7728337938399550478
+    second: potato jumper lore_112
+  - first:
+      213: 724891891997552575
+    second: potato jumper lore_113
+  - first:
+      213: -2944077178746894540
+    second: potato jumper lore_114
+  - first:
+      213: -1873270242137758091
+    second: potato jumper lore_115
+  - first:
+      213: 5037294613874292616
+    second: potato jumper lore_116
+  - first:
+      213: -1845176973592566219
+    second: potato jumper lore_117
+  - first:
+      213: -6054433069367466075
+    second: potato jumper lore_118
+  - first:
+      213: 1297253182313813107
+    second: potato jumper lore_119
+  - first:
+      213: 8708693438840027212
+    second: potato jumper lore_120
+  - first:
+      213: 2675930136807312704
+    second: potato jumper lore_121
+  - first:
+      213: -982201834689970541
+    second: potato jumper lore_122
+  - first:
+      213: -3491292181367679808
+    second: potato jumper lore_123
+  - first:
+      213: -7204688927440360405
+    second: potato jumper lore_124
+  - first:
+      213: -2425844526082154104
+    second: potato jumper lore_125
+  - first:
+      213: -214981867168414560
+    second: potato jumper lore_126
+  - first:
+      213: -5158034317830535854
+    second: potato jumper lore_127
+  - first:
+      213: 2630975084234529293
+    second: potato jumper lore_128
+  - first:
+      213: 4313947095815096834
+    second: potato jumper lore_129
+  - first:
+      213: 7643205129585461364
+    second: potato jumper lore_130
+  - first:
+      213: 6119037769400706606
+    second: potato jumper lore_131
+  - first:
+      213: 6252518928342834829
+    second: potato jumper lore_132
+  - first:
+      213: -1585776509185543071
+    second: potato jumper lore_133
+  - first:
+      213: -6918026878547897755
+    second: potato jumper lore_134
+  - first:
+      213: 814121846078413179
+    second: potato jumper lore_135
+  - first:
+      213: 6826273190475027550
+    second: potato jumper lore_136
+  - first:
+      213: 7910739631214218239
+    second: potato jumper lore_137
+  - first:
+      213: 7885844036820367854
+    second: potato jumper lore_138
+  - first:
+      213: 6186115507345474139
+    second: potato jumper lore_139
+  - first:
+      213: -3750564050742472315
+    second: potato jumper lore_140
+  - first:
+      213: 5764251550538715446
+    second: potato jumper lore_141
+  - first:
+      213: -7767788373879958686
+    second: potato jumper lore_142
+  - first:
+      213: 3118604354230444692
+    second: potato jumper lore_143
+  - first:
+      213: 2823272297217012960
+    second: potato jumper lore_144
+  - first:
+      213: 8698692090892706047
+    second: potato jumper lore_145
+  - first:
+      213: -5673211468493910084
+    second: potato jumper lore_146
+  - first:
+      213: 4327298027750168937
+    second: potato jumper lore_147
+  - first:
+      213: -5999044765950402551
+    second: potato jumper lore_148
+  - first:
+      213: -7635270104560002268
+    second: potato jumper lore_149
+  - first:
+      213: 5292246509636352365
+    second: potato jumper lore_150
+  - first:
+      213: 8967795815802087369
+    second: potato jumper lore_151
+  - first:
+      213: 6877805241447739035
+    second: potato jumper lore_152
+  - first:
+      213: 8740263583886077652
+    second: potato jumper lore_153
+  - first:
+      213: -1615173753722585973
+    second: potato jumper lore_154
+  - first:
+      213: -8899194307768737078
+    second: potato jumper lore_155
+  - first:
+      213: 3106275005834542540
+    second: potato jumper lore_156
+  - first:
+      213: -1662483840277359170
+    second: potato jumper lore_157
+  - first:
+      213: -2049575797539030059
+    second: potato jumper lore_158
+  - first:
+      213: 1009778178011602621
+    second: potato jumper lore_159
+  - first:
+      213: 5308141735681075928
+    second: potato jumper lore_160
+  - first:
+      213: -5511845008145487679
+    second: potato jumper lore_161
+  - first:
+      213: 4373672329439427132
+    second: potato jumper lore_162
+  - first:
+      213: -408553961694765042
+    second: potato jumper lore_163
+  - first:
+      213: 3740711085994155993
+    second: potato jumper lore_164
+  - first:
+      213: -5324826021556943227
+    second: potato jumper lore_165
+  - first:
+      213: -8910656804782359718
+    second: potato jumper lore_166
+  - first:
+      213: 7675433642548554422
+    second: potato jumper lore_167
+  - first:
+      213: -5199127566248589826
+    second: potato jumper lore_168
+  - first:
+      213: -4771556335868514000
+    second: potato jumper lore_169
+  - first:
+      213: -5343175159037839311
+    second: potato jumper lore_170
+  - first:
+      213: 6704434953540761852
+    second: potato jumper lore_171
+  - first:
+      213: -4059545639320786678
+    second: potato jumper lore_172
+  - first:
+      213: -1941658289053084016
+    second: potato jumper lore_173
+  - first:
+      213: -4390108044200837666
+    second: potato jumper lore_174
+  - first:
+      213: -4886799406757946130
+    second: potato jumper lore_175
+  - first:
+      213: 5007406546427241508
+    second: potato jumper lore_176
+  - first:
+      213: 8039532214315333741
+    second: potato jumper lore_177
+  - first:
+      213: -965362605050762620
+    second: potato jumper lore_178
+  - first:
+      213: 6401643348468575495
+    second: potato jumper lore_179
+  - first:
+      213: -7678059108034808818
+    second: potato jumper lore_180
+  - first:
+      213: 1370822309360657804
+    second: potato jumper lore_181
+  - first:
+      213: -7954602887881290279
+    second: potato jumper lore_182
+  - first:
+      213: -2253813052871635580
+    second: potato jumper lore_183
+  - first:
+      213: 3068183240646224851
+    second: potato jumper lore_184
+  - first:
+      213: 8917424451521824903
+    second: potato jumper lore_185
+  - first:
+      213: 2420837957950790300
+    second: potato jumper lore_186
+  - first:
+      213: -5097862752893301335
+    second: potato jumper lore_187
+  - first:
+      213: 6390471944505757809
+    second: potato jumper lore_188
+  - first:
+      213: -5148757578612741961
+    second: potato jumper lore_189
+  - first:
+      213: -2363347018568091196
+    second: potato jumper lore_190
+  - first:
+      213: -422109675287704675
+    second: potato jumper lore_191
+  - first:
+      213: 6240381666823864241
+    second: potato jumper lore_192
+  - first:
+      213: 8907516281620258568
+    second: potato jumper lore_193
+  - first:
+      213: -6718891268279287591
+    second: potato jumper lore_194
+  - first:
+      213: -8305669654006551112
+    second: potato jumper lore_195
+  - first:
+      213: -2866888019269533899
+    second: potato jumper lore_196
+  - first:
+      213: 6401807240458307429
+    second: potato jumper lore_197
+  - first:
+      213: -7626379713720991111
+    second: potato jumper lore_198
+  - first:
+      213: 1078289107704555585
+    second: potato jumper lore_199
+  - first:
+      213: -4226778026011488125
+    second: potato jumper lore_200
+  - first:
+      213: -9201077698174695075
+    second: potato jumper lore_201
+  - first:
+      213: -7915705887927270574
+    second: potato jumper lore_202
+  - first:
+      213: 6359699708575041299
+    second: potato jumper lore_203
+  - first:
+      213: -7553035840766758144
+    second: potato jumper lore_204
+  - first:
+      213: -6277655701613077960
+    second: potato jumper lore_205
+  - first:
+      213: 6048414412838976697
+    second: potato jumper lore_206
+  - first:
+      213: -2998125502938488959
+    second: potato jumper lore_207
+  - first:
+      213: -2924599479696708478
+    second: potato jumper lore_208
+  - first:
+      213: 5332389750619559022
+    second: potato jumper lore_209
+  - first:
+      213: 2940680796771186987
+    second: potato jumper lore_210
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: potato jumper lore_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc4e2853781282d0800000000000000
+      internalID: -3278030695092564774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato jumper lore_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79fc36b750326bc0800000000000000
+      internalID: -3791414783014798977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato jumper lore_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907bbe5d2cdeab840800000000000000
+      internalID: 5240762537467426569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 34fdc99356650c54f8a940884d76e2fb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      potato jumper lore_0: -3278030695092564774
+      potato jumper lore_1: -3791414783014798977
+      potato jumper lore_2: 5240762537467426569
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

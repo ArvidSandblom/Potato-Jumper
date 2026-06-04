@@ -3,6 +3,12 @@ using UnityEngine.UI;
 using System.Collections;
 public class Player : MonoBehaviour
 {
+    [Header("Intro")]
+    [SerializeField] Sprite[] introSprites;
+    [SerializeField] SpriteRenderer introSpriteRenderer;
+    [SerializeField] float introImageDuration = 2f;
+    [SerializeField] KeyCode skipKey = KeyCode.Space;
+    bool introPlaying = false;
     [Header("Animation")]
     [SerializeField] Sprite[] JumpWindupAnim;
     [SerializeField] Sprite[] AirAnim;
@@ -29,10 +35,32 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    void Start()
+    {
+        if (introSprites != null && introSprites.Length > 0)
+        {
+            if (introSpriteRenderer == null)
+            {
+                Debug.LogWarning("Intro sprites assigned but no Intro SpriteRenderer set on Player.");
+            }
+            else
+            {
+                introSpriteRenderer.gameObject.SetActive(false);
+                StartCoroutine(IntroRoutine());
+            }
+        }
+    }
+
     void Update()
     {
+        if (introPlaying)
+            return;
         if (Input.GetMouseButton(0))
         {
+            // don't allow charging / starting a jump while already in air
+            if (isInAir)
+                return;
+
             jumpPower += chargeRate * Time.deltaTime;
             jumpPower = Mathf.Min(jumpPower, maxJumpPower);
             
@@ -69,6 +97,10 @@ public class Player : MonoBehaviour
     void JumpTowardMouse()
     {
         if (jumpPower <= 0f)
+            return;
+
+        // don't allow jumping while already in air
+        if (isInAir)
             return;
 
         Camera cam = Camera.main;
@@ -161,6 +193,40 @@ public class Player : MonoBehaviour
         currentAnimationCoroutine = null;
     }
 
+    IEnumerator IntroRoutine()
+    {
+        introPlaying = true;
+
+        if (introSprites == null || introSprites.Length == 0 || introSpriteRenderer == null)
+        {
+            introPlaying = false;
+            yield break;
+        }
+
+        for (int i = 0; i < introSprites.Length; i++)
+        {
+            Sprite s = introSprites[i];
+            if (s == null)
+                continue;
+
+            introSpriteRenderer.sprite = s;
+            introSpriteRenderer.gameObject.SetActive(true);
+
+            float elapsed = 0f;
+            while (elapsed < introImageDuration)
+            {
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(skipKey))
+                    break;
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        introSpriteRenderer.gameObject.SetActive(false);
+        introPlaying = false;
+        yield break;
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (isInAir)
@@ -172,6 +238,30 @@ public class Player : MonoBehaviour
             Sprite[] landAnim = LandAnim;
             ChangeAnimation(landAnim);
             currentAnimationCoroutine = StartCoroutine(PlayOnceAnimation(landAnim));
+        }
+
+        if (collision.gameObject.name == "Finish")
+        {
+            // vinst, kan ej röra på sig
+            isInAir = false;
+            isWindingUp = false;
+            if (currentAnimationCoroutine != null)
+                StopCoroutine(currentAnimationCoroutine);
+
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+
+            // vinstanimation fix, (ingen anim)
+            if (IdleAnim != null && IdleAnim.Length > 0)
+            {
+                ChangeAnimation(IdleAnim);
+                if (spriteRenderer != null)
+                    spriteRenderer.sprite = IdleAnim[0];
+            }
         }
     }
 }
